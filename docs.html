@@ -3,5 +3,33 @@ layout: page
 title: Athena
 ---
 
-<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+  <script type="text/javascript">
+    $(function () {
+      
+      url = "http://athena.apievangelist.com/swagger.json";
+      
+      window.swaggerUi = new SwaggerUi({
+      	
+        url: url,
+        dom_id: "swagger-ui-container",
+        supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+        onComplete: function(swaggerApi, swaggerUi){
+          if(typeof initOAuth == "function") {
+          }
+          $('pre code').each(function(i, e) {
+            hljs.highlightBlock(e)
+          });
+        },
+        onFailure: function(data) {
+          log("Unable to Load SwaggerUI");
+        },
+        docExpansion: "none",
+        sorter : "alpha"
+      });
+      
+      window.swaggerUi.load();
+      
+  });
+  </script>
+  
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>

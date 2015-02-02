@@ -1,0 +1,1701 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Athena",
+    "description": "This the athena civic API",
+    "termsOfService": "http://stack.network/terms-of-service.html",
+    "version": "v1"
+  },
+  "host": "athena.api.apievangelist.com",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "nodes/": {
+      "get": {
+        "summary": "retrieves all nodes",
+        "description": "pulls all nodes, with filter by keyword applied in specific fields",
+        "operationId": "getNodes",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "a text query to search across nodes",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "in",
+            "in": "query",
+            "description": "common delimited list of fields to apply node query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/nodes"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node",
+        "description": "add a new node",
+        "operationId": "addNode",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "formData",
+            "description": "unique id of the node",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "type of node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "nickname",
+            "in": "formData",
+            "description": "nickname for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "in": "formData",
+            "description": "location for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "employees",
+            "in": "formData",
+            "description": "number of employess for the node",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "twitter_handle",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "twitter_handle",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "followers",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "influence",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/nodes"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/": {
+      "get": {
+        "summary": "Retrieve a node using its ID",
+        "description": "Returns the node detail",
+        "operationId": "getNode",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/nodes"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "put": {
+        "summary": "update nodes",
+        "description": "update nodes",
+        "operationId": "updateNode",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "formData",
+            "description": "unique id of the node",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "type of node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "nickname",
+            "in": "formData",
+            "description": "nickname for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "in": "formData",
+            "description": "location for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "employees",
+            "in": "formData",
+            "description": "number of employess for the node",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "twitter_handle",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "twitter_handle",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "followers",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "influence",
+            "in": "formData",
+            "description": "twitter handle for the node",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/nodes"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "delete": {
+        "summary": "delete nodes",
+        "description": "deletes a node",
+        "operationId": "deleteNode",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/nodes"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/categories/": {
+      "get": {
+        "summary": "Retrieve a nodes categories",
+        "description": "Returns the node categories",
+        "operationId": "getNodeCategories",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/categories"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node category",
+        "description": "add node category",
+        "operationId": "addNodeCategory",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "unique id of the node",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/categories"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/categories/{name}/": {
+      "delete": {
+        "summary": "delete a node category",
+        "description": "delete a node category",
+        "operationId": "deleteNodeCategory",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "description": "name of the node category to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/key_people/": {
+      "get": {
+        "summary": "Retrieve a node key person",
+        "description": "Returns the node key person",
+        "operationId": "getNodeKeyPerson",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/key_people"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node category",
+        "description": "add node category",
+        "operationId": "addNodeCategory",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "unique id of the node",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/key_people"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/key_people/{name}/": {
+      "delete": {
+        "summary": "delete a node key person",
+        "description": "delete a node key person",
+        "operationId": "deleteNodeKeyPerson",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "description": "name of the node person to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/relations/": {
+      "get": {
+        "summary": "Retrieve a node relation",
+        "description": "Returns the node relation",
+        "operationId": "getNodeRelations",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/relations"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node relation",
+        "description": "add node relation",
+        "operationId": "addNodeCategory",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the node relation",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/relations"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/relations/{name}/": {
+      "delete": {
+        "summary": "delete a node relation",
+        "description": "delete a node relation",
+        "operationId": "deleteNodeRelation",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "description": "name of the node relation to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/funding_received/": {
+      "get": {
+        "summary": "Retrieve a nodes funding received",
+        "description": "Returns the node funding received",
+        "operationId": "getNodeFundingReceived",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/funding_received"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node funding received",
+        "description": "add node funding received",
+        "operationId": "addNodeFundingReceived",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "entity",
+            "in": "formData",
+            "description": "entity of the node investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "description": "amount of the investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "formData",
+            "description": "year of the investment made",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/funding_received"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/funding_received/{entity}/{year}/": {
+      "delete": {
+        "summary": "delete a node funding received",
+        "description": "delete a node funding received",
+        "operationId": "deleteNodeCategory",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "path",
+            "description": "entity of the node funding to delete",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node funding to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/funding_given/": {
+      "get": {
+        "summary": "Retrieve a nodes funding given",
+        "description": "Returns the node funding given",
+        "operationId": "getNodeFundingGiven",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/funding_given"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node funding given",
+        "description": "add node funding given",
+        "operationId": "addNodeFundingGiven",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "entity",
+            "in": "formData",
+            "description": "entity of the node investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "description": "amount of the investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "formData",
+            "description": "year of the investment made",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/funding_given"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/funding_given/{entity}/{year}/": {
+      "delete": {
+        "summary": "delete a node funding given",
+        "description": "delete a node funding given",
+        "operationId": "deleteNodeFundingGiven",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "path",
+            "description": "entity of the node funding to delete",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node funding to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/investments_received/": {
+      "get": {
+        "summary": "Retrieve a nodes investment received",
+        "description": "Returns the node investment received",
+        "operationId": "getNodeInvestmentsReceived",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/investments_received"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node category",
+        "description": "add node category",
+        "operationId": "addNodeCategory",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "entity",
+            "in": "formData",
+            "description": "entity of the node investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "description": "amount of the investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "formData",
+            "description": "year of the investment made",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/investments_received"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/investments_received/{entity}/{year}/": {
+      "delete": {
+        "summary": "delete a node investment received",
+        "description": "delete a node investment received",
+        "operationId": "deleteNodeInvestmentReceived",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "path",
+            "description": "entity of the node investment to delete",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node investment to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/investments_made/": {
+      "get": {
+        "summary": "Retrieve a nodes investment made",
+        "description": "Returns the node investment made",
+        "operationId": "getNodeInvestmentMade",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/investments_made"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node investment made",
+        "description": "add node investment made",
+        "operationId": "addNodeInvestmentMade",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "entity",
+            "in": "formData",
+            "description": "entity of the node investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "amount",
+            "in": "formData",
+            "description": "amount of the investment made",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "formData",
+            "description": "year of the investment made",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/investments_made"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/investments_made/{entity}/{year}/": {
+      "delete": {
+        "summary": "delete a node investment made",
+        "description": "delete a node investment made",
+        "operationId": "deleteNodeInvestmentMade",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "path",
+            "description": "entity of the node investment to delete",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node investment to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/collaborations/": {
+      "get": {
+        "summary": "Retrieve a nodes collaborations",
+        "description": "Returns the node collaboration",
+        "operationId": "getNodeCategories",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node collaboration response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/collaborations"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node collaboration",
+        "description": "add node collaboration",
+        "operationId": "addNodeCollaboration",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "name of the collaboration node",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "nodes response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/collaborations"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/collaborations/{entity}/": {
+      "delete": {
+        "summary": "delete a node collaboration",
+        "description": "delete a node collaboration",
+        "operationId": "deleteNodeCollaboration",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "entity",
+            "in": "path",
+            "description": "entity of the node collaboration to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node collaboration response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/revenue/": {
+      "get": {
+        "summary": "Retrieve a nodes revenue",
+        "description": "Returns the node revenue",
+        "operationId": "getNodeRevenue",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node revenue response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/revenue"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node revenue",
+        "description": "add node revenue",
+        "operationId": "addNodeRevenue",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "year": "year",
+            "in": "formData",
+            "description": "year of the revenue",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "year": "amount",
+            "in": "formData",
+            "description": "year of the revenue",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node revenue response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/revenue"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/revenue/{year}/": {
+      "delete": {
+        "summary": "delete a node revenue",
+        "description": "delete a node revenue",
+        "operationId": "deleteNodeRevenue",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node revenue to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node delete revenue response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/expenses/": {
+      "get": {
+        "summary": "Retrieve a nodes expenses",
+        "description": "Returns the node expenses",
+        "operationId": "getNodeExpenses",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node expense response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/expenses"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      },
+      "post": {
+        "summary": "add node expense",
+        "description": "add node expense",
+        "operationId": "addNodeExpense",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "year": "year",
+            "in": "formData",
+            "description": "year of the expense",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "year": "amount",
+            "in": "formData",
+            "description": "year of the expense",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "node expense response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/expenses"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    },
+    "nodes/{ID}/expenses/{year}/": {
+      "delete": {
+        "summary": "delete a node expenses by year",
+        "description": "delete a node expenses by year",
+        "operationId": "deleteNodeExpenses",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "unique ID for the node",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "year of the node expense to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "delete node expense response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "nodes",
+          "civic"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "nodes": {
+      "properties": {
+        "ID": {
+          "description": "unique for node",
+          "type": "integer"
+        },
+        "type": {
+          "description": "type of node",
+          "type": "string"
+        },
+        "category": {
+          "description": "category for the node",
+          "type": "array"
+        },
+        "name": {
+          "description": "name of the node",
+          "type": "string"
+        },
+        "nickname": {
+          "description": "nickname for the node",
+          "type": "string"
+        },
+        "location": {
+          "description": "location of the node",
+          "type": "string"
+        },
+        "url": {
+          "description": "url of the node",
+          "type": "string"
+        },
+        "employees": {
+          "description": "number of employees for the node",
+          "type": "integer"
+        },
+        "key_people": {
+          "description": "key people for the node",
+          "type": "array"
+        },
+        "twitter_handle": {
+          "description": "twitter handle for the node",
+          "type": "string"
+        },
+        "followers": {
+          "description": "number of twitter followers for the node",
+          "type": "integer"
+        },
+        "relations": {
+          "description": "relationships for the node",
+          "type": "array"
+        },
+        "funding_received": {
+          "description": "funding received for the node",
+          "type": "array"
+        },
+        "investments_received": {
+          "description": "investements received for the node",
+          "type": "array"
+        },
+        "funding_given": {
+          "description": "funding given for the node",
+          "type": "array"
+        },
+        "investments_made": {
+          "description": "investments made for the node",
+          "type": "array"
+        },
+        "collaborations": {
+          "description": "collaborations for the node",
+          "type": "array"
+        },
+        "data": {
+          "description": "data for the node",
+          "type": "array"
+        },
+        "revenue": {
+          "description": "revenue for the node",
+          "type": "array"
+        },
+        "expenses": {
+          "description": "expenses for the node",
+          "type": "array"
+        },
+        "influence": {
+          "description": "influence for the node",
+          "type": "string"
+        }
+      }
+    },
+    "categories": {
+      "properties": {
+        "name": {
+          "description": "name of the category",
+          "type": "string"
+        }
+      }
+    },
+    "key_people": {
+      "properties": {
+        "name": {
+          "description": "name of the category",
+          "type": "string"
+        }
+      }
+    },
+    "relations": {
+      "properties": {
+        "name": {
+          "description": "name of the category",
+          "type": "string"
+        }
+      }
+    },
+    "funding_received": {
+      "properties": {
+        "entity": {
+          "description": "entity receiving",
+          "type": "string"
+        },
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "funding_given": {
+      "properties": {
+        "entity": {
+          "description": "entity receiving",
+          "type": "string"
+        },
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "investments_received": {
+      "properties": {
+        "entity": {
+          "description": "entity receiving",
+          "type": "string"
+        },
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "investments_made": {
+      "properties": {
+        "entity": {
+          "description": "entity receiving",
+          "type": "string"
+        },
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "collaborations": {
+      "properties": {
+        "name": {
+          "description": "name of the category",
+          "type": "string"
+        }
+      }
+    },
+    "revenue": {
+      "properties": {
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "expenses": {
+      "properties": {
+        "amount": {
+          "description": "amount received",
+          "type": "string"
+        },
+        "year": {
+          "description": "year received",
+          "type": "string"
+        }
+      }
+    },
+    "notsure": {
+      "properties": {
+        "message": {
+          "description": "I am not sure what the response is!",
+          "type": "string"
+        }
+      }
+    },    
+    "errorModel": {
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

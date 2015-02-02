@@ -14,11 +14,6 @@
   <link href='/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
   <link href='/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/hyde.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/syntax.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
-
   <!-- Icons -->
   <link rel="shortcut icon" type="image/x-icon" href="http://apievangelist.com/favicon.ico">
   <link rel="icon" type="image/x-icon" href="http://apievangelist.com/favicon.ico">
@@ -45,13 +40,11 @@
   
   <script type="text/javascript">
     $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-      if (url && url.length > 1) {
-        url = decodeURIComponent(url[1]);
-      } else {
-        url = "http://athena.apievangelist.com/swagger.json";
-      }
+      
+      url = "http://athena.apievangelist.com/swagger.json";
+      
       window.swaggerUi = new SwaggerUi({
+      	
         url: url,
         dom_id: "swagger-ui-container",
         supportedSubmitMethods: ['get', 'post', 'put', 'delete'],

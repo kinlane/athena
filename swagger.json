@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "nodes/": {
+    "/nodes/": {
       "get": {
         "summary": "retrieves all nodes",
         "description": "pulls all nodes, with filter by keyword applied in specific fields",
@@ -114,13 +114,6 @@
             "type": "string"
           },
           {
-            "name": "twitter_handle",
-            "in": "formData",
-            "description": "twitter handle for the node",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "followers",
             "in": "formData",
             "description": "twitter handle for the node",
@@ -152,7 +145,7 @@
         ]
       }
     },
-    "nodes/{ID}/": {
+    "/nodes/{ID}/": {
       "get": {
         "summary": "Retrieve a node using its ID",
         "description": "Returns the node detail",
@@ -162,9 +155,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -184,13 +176,13 @@
         ]
       },
       "put": {
-        "summary": "update nodes",
-        "description": "update nodes",
+        "summary": "Update a node",
+        "description": "Update a node",
         "operationId": "updateNode",
         "parameters": [
           {
             "name": "ID",
-            "in": "formData",
+            "in": "path",
             "description": "unique id of the node",
             "required": true,
             "type": "integer"
@@ -245,23 +237,16 @@
             "type": "string"
           },
           {
-            "name": "twitter_handle",
-            "in": "formData",
-            "description": "twitter handle for the node",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "followers",
             "in": "formData",
-            "description": "twitter handle for the node",
+            "description": "twitter followers for the node",
             "required": false,
             "type": "string"
           },
           {
             "name": "influence",
             "in": "formData",
-            "description": "twitter handle for the node",
+            "description": "influence for the node",
             "required": false,
             "type": "string"
           }
@@ -312,7 +297,7 @@
         ]
       }
     },
-    "nodes/{ID}/categories/": {
+    "/nodes/{ID}/categories/": {
       "get": {
         "summary": "Retrieve a nodes categories",
         "description": "Returns the node categories",
@@ -322,9 +307,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -348,6 +332,13 @@
         "description": "add node category",
         "operationId": "addNodeCategory",
         "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": true,
+            "type": "integer"
+          },          
           {
             "name": "name",
             "in": "formData",
@@ -373,7 +364,7 @@
         ]
       }
     },
-    "nodes/{ID}/categories/{name}/": {
+    "/nodes/{ID}/categories/{name}/": {
       "delete": {
         "summary": "delete a node category",
         "description": "delete a node category",
@@ -411,7 +402,7 @@
         ]
       }
     },
-    "nodes/{ID}/key_people/": {
+    "/nodes/{ID}/key_people/": {
       "get": {
         "summary": "Retrieve a node key person",
         "description": "Returns the node key person",
@@ -421,9 +412,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -447,6 +437,13 @@
         "description": "add node category",
         "operationId": "addNodeCategory",
         "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "description": "ID for the node",
+            "required": true,
+            "type": "integer"
+          },          
           {
             "name": "name",
             "in": "formData",
@@ -472,7 +469,7 @@
         ]
       }
     },
-    "nodes/{ID}/key_people/{name}/": {
+    "/nodes/{ID}/key_people/{name}/": {
       "delete": {
         "summary": "delete a node key person",
         "description": "delete a node key person",
@@ -510,7 +507,7 @@
         ]
       }
     },
-    "nodes/{ID}/relations/": {
+    "/nodes/{ID}/relations/": {
       "get": {
         "summary": "Retrieve a node relation",
         "description": "Returns the node relation",
@@ -520,9 +517,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -550,9 +546,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "name",
@@ -579,7 +574,7 @@
         ]
       }
     },
-    "nodes/{ID}/relations/{name}/": {
+    "/nodes/{ID}/relations/{name}/": {
       "delete": {
         "summary": "delete a node relation",
         "description": "delete a node relation",
@@ -617,7 +612,7 @@
         ]
       }
     },
-    "nodes/{ID}/funding_received/": {
+    "/nodes/{ID}/funding_received/": {
       "get": {
         "summary": "Retrieve a nodes funding received",
         "description": "Returns the node funding received",
@@ -627,9 +622,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -657,9 +651,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "entity",
@@ -700,7 +693,7 @@
         ]
       }
     },
-    "nodes/{ID}/funding_received/{entity}/{year}/": {
+    "/nodes/{ID}/funding_received/{entity}/{year}/": {
       "delete": {
         "summary": "delete a node funding received",
         "description": "delete a node funding received",
@@ -745,7 +738,7 @@
         ]
       }
     },
-    "nodes/{ID}/funding_given/": {
+    "/nodes/{ID}/funding_given/": {
       "get": {
         "summary": "Retrieve a nodes funding given",
         "description": "Returns the node funding given",
@@ -755,9 +748,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -785,9 +777,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "entity",
@@ -828,7 +819,7 @@
         ]
       }
     },
-    "nodes/{ID}/funding_given/{entity}/{year}/": {
+    "/nodes/{ID}/funding_given/{entity}/{year}/": {
       "delete": {
         "summary": "delete a node funding given",
         "description": "delete a node funding given",
@@ -873,7 +864,7 @@
         ]
       }
     },
-    "nodes/{ID}/investments_received/": {
+    "/nodes/{ID}/investments_received/": {
       "get": {
         "summary": "Retrieve a nodes investment received",
         "description": "Returns the node investment received",
@@ -883,9 +874,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -913,9 +903,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "entity",
@@ -956,7 +945,7 @@
         ]
       }
     },
-    "nodes/{ID}/investments_received/{entity}/{year}/": {
+    "/nodes/{ID}/investments_received/{entity}/{year}/": {
       "delete": {
         "summary": "delete a node investment received",
         "description": "delete a node investment received",
@@ -1001,7 +990,7 @@
         ]
       }
     },
-    "nodes/{ID}/investments_made/": {
+    "/nodes/{ID}/investments_made/": {
       "get": {
         "summary": "Retrieve a nodes investment made",
         "description": "Returns the node investment made",
@@ -1011,9 +1000,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -1041,9 +1029,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "entity",
@@ -1084,7 +1071,7 @@
         ]
       }
     },
-    "nodes/{ID}/investments_made/{entity}/{year}/": {
+    "/nodes/{ID}/investments_made/{entity}/{year}/": {
       "delete": {
         "summary": "delete a node investment made",
         "description": "delete a node investment made",
@@ -1129,7 +1116,7 @@
         ]
       }
     },
-    "nodes/{ID}/collaborations/": {
+    "/nodes/{ID}/collaborations/": {
       "get": {
         "summary": "Retrieve a nodes collaborations",
         "description": "Returns the node collaboration",
@@ -1139,9 +1126,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -1169,9 +1155,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
             "name": "name",
@@ -1198,7 +1183,7 @@
         ]
       }
     },
-    "nodes/{ID}/collaborations/{entity}/": {
+    "/nodes/{ID}/collaborations/{entity}/": {
       "delete": {
         "summary": "delete a node collaboration",
         "description": "delete a node collaboration",
@@ -1236,7 +1221,7 @@
         ]
       }
     },
-    "nodes/{ID}/revenue/": {
+    "/nodes/{ID}/revenue/": {
       "get": {
         "summary": "Retrieve a nodes revenue",
         "description": "Returns the node revenue",
@@ -1246,9 +1231,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -1276,19 +1260,18 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
-            "year": "year",
+            "name": "year",
             "in": "formData",
             "description": "year of the revenue",
             "required": true,
             "type": "string"
           },
           {
-            "year": "amount",
+            "name": "amount",
             "in": "formData",
             "description": "year of the revenue",
             "required": true,
@@ -1312,7 +1295,7 @@
         ]
       }
     },
-    "nodes/{ID}/revenue/{year}/": {
+    "/nodes/{ID}/revenue/{year}/": {
       "delete": {
         "summary": "delete a node revenue",
         "description": "delete a node revenue",
@@ -1350,7 +1333,7 @@
         ]
       }
     },
-    "nodes/{ID}/expenses/": {
+    "/nodes/{ID}/expenses/": {
       "get": {
         "summary": "Retrieve a nodes expenses",
         "description": "Returns the node expenses",
@@ -1360,9 +1343,8 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           }
         ],
         "responses": {
@@ -1390,19 +1372,18 @@
             "name": "ID",
             "in": "path",
             "description": "ID for the node",
-            "required": "true",
-            "type": "integer",
-            "format": "id"
+            "required": true,
+            "type": "integer"
           },
           {
-            "year": "year",
+            "name": "year",
             "in": "formData",
             "description": "year of the expense",
             "required": true,
             "type": "string"
           },
           {
-            "year": "amount",
+            "name": "amount",
             "in": "formData",
             "description": "year of the expense",
             "required": true,
@@ -1426,7 +1407,7 @@
         ]
       }
     },
-    "nodes/{ID}/expenses/{year}/": {
+    "/nodes/{ID}/expenses/{year}/": {
       "delete": {
         "summary": "delete a node expenses by year",
         "description": "delete a node expenses by year",
@@ -1478,7 +1459,10 @@
         },
         "category": {
           "description": "category for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/categories"
+          }
         },
         "name": {
           "description": "name of the node",
@@ -1502,7 +1486,10 @@
         },
         "key_people": {
           "description": "key people for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/key_people"
+          }
         },
         "twitter_handle": {
           "description": "twitter handle for the node",
@@ -1514,39 +1501,59 @@
         },
         "relations": {
           "description": "relationships for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/relations"
+          }
         },
         "funding_received": {
           "description": "funding received for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/funding_received"
+          }
         },
         "investments_received": {
           "description": "investements received for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/investments_received"
+          }
         },
         "funding_given": {
           "description": "funding given for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/funding_given"
+          }
         },
         "investments_made": {
           "description": "investments made for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/investments_made"
+          }
         },
         "collaborations": {
           "description": "collaborations for the node",
-          "type": "array"
-        },
-        "data": {
-          "description": "data for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/collaborations"
+          }
         },
         "revenue": {
           "description": "revenue for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/revenue"
+          }
         },
         "expenses": {
           "description": "expenses for the node",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/expenses"
+          }
         },
         "influence": {
           "description": "influence for the node",
@@ -1678,21 +1685,6 @@
       "properties": {
         "message": {
           "description": "I am not sure what the response is!",
-          "type": "string"
-        }
-      }
-    },    
-    "errorModel": {
-      "required": [
-        "code",
-        "message"
-      ],
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
           "type": "string"
         }
       }

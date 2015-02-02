@@ -48,8 +48,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Nodes"
         ]
       },
       "post": {
@@ -140,8 +139,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Nodes"
         ]
       }
     },
@@ -171,8 +169,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Nodes"
         ]
       },
       "put": {
@@ -263,8 +260,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Nodes"
         ]
       },
       "delete": {
@@ -292,8 +288,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Nodes"
         ]
       }
     },
@@ -323,8 +318,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Categories"
         ]
       },
       "post": {
@@ -359,8 +353,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Categories"
         ]
       }
     },
@@ -397,8 +390,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Categories"
         ]
       }
     },
@@ -428,8 +420,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Key People"
         ]
       },
       "post": {
@@ -464,8 +455,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Key People"
         ]
       }
     },
@@ -502,8 +492,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Key People"
         ]
       }
     },
@@ -533,8 +522,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Relations"
         ]
       },
       "post": {
@@ -569,8 +557,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Relations"
         ]
       }
     },
@@ -607,8 +594,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Relations"
         ]
       }
     },
@@ -638,8 +624,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Received"
         ]
       },
       "post": {
@@ -688,8 +673,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Received"
         ]
       }
     },
@@ -733,8 +717,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Received"
         ]
       }
     },
@@ -764,8 +747,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Given"
         ]
       },
       "post": {
@@ -814,8 +796,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Given"
         ]
       }
     },
@@ -859,8 +840,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Funding Given"
         ]
       }
     },
@@ -890,8 +870,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Received"
         ]
       },
       "post": {
@@ -940,8 +919,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Received"
         ]
       }
     },
@@ -985,8 +963,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Received"
         ]
       }
     },
@@ -1016,8 +993,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Made"
         ]
       },
       "post": {
@@ -1066,8 +1042,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Made"
         ]
       }
     },
@@ -1111,8 +1086,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Investments Made"
         ]
       }
     },
@@ -1142,8 +1116,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Collaborations"
         ]
       },
       "post": {
@@ -1178,8 +1151,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Collaborations"
         ]
       }
     },
@@ -1216,8 +1188,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Collaborations"
         ]
       }
     },
@@ -1247,8 +1218,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Revenue"
         ]
       },
       "post": {
@@ -1290,8 +1260,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Revenue"
         ]
       }
     },
@@ -1328,8 +1297,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Revenue"
         ]
       }
     },
@@ -1359,8 +1327,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Expenses"
         ]
       },
       "post": {
@@ -1402,8 +1369,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Expenses"
         ]
       }
     },
@@ -1440,8 +1406,7 @@
           }
         },
         "tags": [
-          "nodes",
-          "civic"
+          "Node Expenses"
         ]
       }
     }

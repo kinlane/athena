@@ -332,7 +332,7 @@
             "description": "ID for the node",
             "required": true,
             "type": "integer"
-          },          
+          },
           {
             "name": "name",
             "in": "formData",
@@ -434,7 +434,7 @@
             "description": "ID for the node",
             "required": true,
             "type": "integer"
-          },          
+          },
           {
             "name": "name",
             "in": "formData",
@@ -1407,6 +1407,36 @@
         },
         "tags": [
           "Node Expenses"
+        ]
+      }
+    },
+    "/nodes/import/": {
+      "get": {
+        "summary": "delete a node expenses by year",
+        "description": "delete a node expenses by year",
+        "operationId": "deleteNodeExpenses",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of file to import",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "import reponse\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/notsure"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Import"
         ]
       }
     }
